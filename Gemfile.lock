@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/rohitnick/spree-import-products.git
+  revision: 6f7bedbcae3acec3c82e17e36193a823695ce871
+  specs:
+    import_products (1.0.1)
+      spree_auth_devise
+      spree_core (>= 1.3.0)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: 5457a3658238e2489f343acfa1a47d2afafaa2b3
   specs:
@@ -381,6 +389,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   heroku-deflater
+  import_products!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

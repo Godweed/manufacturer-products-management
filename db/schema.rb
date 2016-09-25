@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915171796) do
+ActiveRecord::Schema.define(version: 20160920080549) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -350,6 +350,19 @@ ActiveRecord::Schema.define(version: 20160915171796) do
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at"
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
+  end
+
+  create_table "spree_product_imports", force: :cascade do |t|
+    t.string   "data_file_file_name"
+    t.string   "data_file_content_type"
+    t.integer  "data_file_file_size"
+    t.datetime "data_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "product_ids"
+    t.string   "state"
+    t.datetime "failed_at"
+    t.datetime "completed_at"
   end
 
   create_table "spree_product_option_types", force: :cascade do |t|
