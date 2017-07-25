@@ -64,6 +64,6 @@ gem 'spree_auth_devise', '~> 3.3.0.rc1'
 gem 'spree_gateway', '~> 3.3.0.rc1'
 
 # # for importing products data using csv
-gem 'import_products', github: 'rohitnick/spree-import-products', ref: 'v1.0.1'
+# gem 'import_products', github: 'rohitnick/spree-import-products', ref: 'v1.0.1'
 
-gem 'spree_yoda_theme', github: 'rohitnick/spree_yoda_theme', ref: 'v1.0.1'
+# gem 'spree_yoda_theme', github: 'rohitnick/spree_yoda_theme', ref: 'v1.0.1'
