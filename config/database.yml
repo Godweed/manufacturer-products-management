@@ -26,7 +26,7 @@ test:
 
 production:
   adapter: postgresql
-  database: thearmchair_production
+  database: sankalp_production
   timeout: 5000
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
