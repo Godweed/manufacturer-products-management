@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/rohitnick/spree-import-products.git
   revision: 6f7bedbcae3acec3c82e17e36193a823695ce871
+  branch: master
   specs:
     import_products (1.0.1)
       spree_auth_devise
@@ -9,7 +10,6 @@ GIT
 GIT
   remote: https://github.com/rohitnick/spree_yoda_theme.git
   revision: 1e4a0c44c7984bad94531d52d59e4fb1802e8668
-  branch: master
   specs:
     spree_yoda_theme (3.2.1)
       spree_core
