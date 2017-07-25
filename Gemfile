@@ -38,8 +38,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # gem 'rspec-rails'
   gem 'rspec'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # # Use sqlite3 as the database for Active Record
+  # gem 'sqlite3'
 end
 
 group :development do
@@ -52,7 +52,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.17.1'
+  gem 'pg'
   gem 'rails_12factor'
   gem 'heroku-deflater'
   gem 'newrelic_rpm'
