@@ -3,8 +3,6 @@ ruby '2.2.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3.rc1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,8 +36,10 @@ gem "font-awesome-rails"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec'
   # gem 'rspec-rails'
+  gem 'rspec'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
@@ -64,6 +64,6 @@ gem 'spree_auth_devise', '~> 3.3.0.rc1'
 gem 'spree_gateway', '~> 3.3.0.rc1'
 
 # # for importing products data using csv
-# gem 'import_products', github: 'rohitnick/spree-import-products', ref: 'master'
+gem 'import_products', github: 'rohitnick/spree-import-products', ref: 'v1.0.1'
 
-# gem 'spree_yoda_theme', github: 'rohitnick/spree_yoda_theme', ref: 'master'
+gem 'spree_yoda_theme', github: 'rohitnick/spree_yoda_theme', ref: 'v1.0.1'
