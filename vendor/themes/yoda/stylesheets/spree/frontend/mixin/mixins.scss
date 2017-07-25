@@ -1,0 +1,80 @@
+@mixin border-radius($value) {
+  border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  -opera-border-radius: $value;
+}
+
+@mixin transition($property, $value) {
+  transition: $property $value ease-in-out;
+  -moz-transition: $property $value ease-in-out;
+  -ms-transition: $property $value ease-in-out;
+  -opera-transition: $property $value ease-in-out;
+}
+
+@mixin scale ($value) {
+  transform: scale($value);
+  -ms-transform: scale($value);
+  -webkit-transform: scale($value);
+}
+
+@mixin box-shadow ($val1, $val2, $val3, $color){
+  box-shadow: $val1 $val2 $val3 $color;
+  -moz-box-shadow: $val1 $val2 $val3 $color;
+  -webkit-box-shadow: $val1 $val2 $val3 $color;
+}
+
+@mixin text-shadow ($val1, $val2, $val3, $color){
+  text-shadow: $val1 $val2 $val3 $color;
+  -moz-text-shadow: $val1 $val2 $val3 $color;
+  -webkit-text-shadow: $val1 $val2 $val3 $color;
+}
+
+@mixin gradient-left-right ($color1, $color2) {
+  background: -webkit-gradient(linear, left top, right top, from($color1), to($color2));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(left, $color1, $color2);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(left, $color1, $color2);
+  /* IE 10 */
+  background: -ms-linear-gradient(left, $color1, $color2);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(left, $color1, $color2);
+}
+
+.cmn-transition{
+  @include transition(all, 0.3s);
+}
+.cmn-scale{
+  @extend .cmn-transition;
+  @include scale(1.01);
+}
+
+
+
+
+/*responsive*/
+$mobile-view: 767px;
+$desktop-view: 1024px;
+$large-view: 1080px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media (max-width: $mobile-view) { @content; }
+  }
+
+  @else if $media == minTablet {
+    @media (min-width: $mobile-view + 1) { @content; }
+  }
+
+
+  @else if $media == tablet {
+    @media (min-width: $mobile-view + 1) and (max-width: $desktop-view - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop-view) and (max-width: $large-view) { @content; }
+  }
+  @else if $media == largeview {
+    @media (min-width: $large-view + 1) { @content; }
+  }
+}

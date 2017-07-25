@@ -1,0 +1,39 @@
+<% content_for :show_footer do -%>.<% end %>
+<% content_for :header do -%>
+  <%= stylesheet_link_tag 'yoda/stylesheets/spree/frontend/product-listing' -%>
+  <%= javascript_include_tag 'yoda/javascripts/spree/frontend/product_show' -%>
+  <%= javascript_include_tag 'yoda/javascripts/spree/frontend/product' -%>
+<% end -%>
+<% if "spree/products" == params[:controller] && @taxon || !@taxonomies.empty? %>
+  <% content_for :sidebar do %>
+    <div data-hook="homepage_sidebar_navigation">
+      <%= render :partial => 'spree/shared/filters' %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if params[:keywords] %>
+  <div data-hook="search_results">
+    <% if @products.empty? %>
+      <h6 class="search-results-title"><%= Spree.t(:no_products_found) %></h6>
+    <% else %>
+      <% if @taxon.present? %>
+        <%= render 'spree/shared/products', products: @products, taxons: [@taxon] %>
+      <% else %>
+        <%= render 'spree/products/related_products', products: @products, search: true %>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <div data-hook="homepage_products">
+    <% cache(cache_key_for_products) do %>
+      <% if @taxon.present? %>
+        <%= render 'spree/shared/products', products: @products, taxons: [@taxon] %>
+      <% else %>
+        <%= render 'spree/products/related_products', products: @products, search: true %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="pagination row pagination-row"><%= paginate @products if @products.first.is_a? Spree::Product %></div>
