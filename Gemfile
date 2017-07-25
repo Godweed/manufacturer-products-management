@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.3.rc1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -59,9 +59,9 @@ group :production do
   gem 'autoscaler'
 end
 
-gem 'spree', github: 'spree/spree'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
-gem 'spree_gateway', github: 'spree/spree_gateway'
+gem 'spree', '~> 3.3.0.rc1'
+gem 'spree_auth_devise', '~> 3.3.0.rc1'
+gem 'spree_gateway', '~> 3.3.0.rc1'
 
 # for importing products data using csv
 gem 'import_products', github: 'rohitnick/spree-import-products'
