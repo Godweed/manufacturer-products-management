@@ -1,5 +1,5 @@
 # This migration comes from import_products (originally 20120325094712)
-class AddStateFailedAtAndCompletedAtToProductImports < ActiveRecord::Migration
+class AddStateFailedAtAndCompletedAtToProductImports < ActiveRecord::Migration[5.1]
   def change
     add_column :spree_product_imports, :state, :string
     add_column :spree_product_imports, :failed_at, :datetime

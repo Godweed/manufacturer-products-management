@@ -1,5 +1,5 @@
 # This migration comes from import_products (originally 20101123205019)
-class CreateProductImports < ActiveRecord::Migration
+class CreateProductImports < ActiveRecord::Migration[5.1]
   def self.up
     create_table :product_imports do |t|
       t.string :data_file_file_name
