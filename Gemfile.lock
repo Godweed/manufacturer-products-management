@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rohitnick/spree-import-products.git
-  revision: b4ad4677c3da8f92bbf71a1d1cf813bfd4056709
+  revision: aa840269c55d1c3b4f20ec04003099641d8f0447
   specs:
     import_products (3.0.1)
       spree_auth_devise

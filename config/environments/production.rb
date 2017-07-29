@@ -94,6 +94,7 @@ Rails.application.configure do
     url: ':s3_domain_url',
     s3_protocol: "http",
     path: "/spree/product_imports/data-files/:basename_:timestamp.:extension",
+    s3_host_name: "http://s3-ap-south-1.amazonaws.com/",
     s3_credentials: {
       bucket: 'sankalpint',
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
