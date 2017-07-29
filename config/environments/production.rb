@@ -60,8 +60,6 @@ Rails.application.configure do
     # UNCOMMENT BELOW LINES TO SEND EMAILS
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { host: "http://sankalpint.herokuapp.com" }
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -94,7 +92,6 @@ Rails.application.configure do
     url: ':s3_domain_url',
     s3_protocol: "http",
     path: "/spree/product_imports/data-files/:basename_:timestamp.:extension",
-    s3_host_name: "http://s3-ap-south-1.amazonaws.com/",
     s3_credentials: {
       bucket: 'sankalpint',
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
