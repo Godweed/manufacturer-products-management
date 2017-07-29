@@ -14,5 +14,3 @@ ActionMailer::Base.smtp_settings = {
   :tls                  => true,
   :enable_starttls_auto => true 
 }
-
-Mail.register_interceptor(MailInterceptor)
