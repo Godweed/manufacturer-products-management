@@ -27,6 +27,7 @@
 
 #ignore public images file
 /public/spree/*
+/public
 
 # Ignore static product import data
 /lib/etc/product_data/*

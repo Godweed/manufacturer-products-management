@@ -1,0 +1,9 @@
+---
+:concurrency: 5
+# :pidfile: ./tmp/pids/sidekiq.pid
+# :logfile: ./log/sidekiq.log
+:queues:
+  - default
+  - ['messages', 5]
+  - ['mailers', 1]
+  - ['cangaroo', 6]
