@@ -13,6 +13,9 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+  config.checkout_zone = 'India' # this will restrict countries in delivery address to India
+  config.default_country_id = Spree::Country.find_by(iso: "IN").id
+  config.currency = "INR"
 end
 
 Spree.user_class = "Spree::User"

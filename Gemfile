@@ -59,10 +59,18 @@ group :production do
   gem 'autoscaler'
 end
 
+# Gem for Background processes
+gem 'sidekiq'
+
+gem 'aws-sdk', '~> 2'
+
 gem 'spree', '~> 3.3.0.rc1'
 gem 'spree_auth_devise', '~> 3.3.0.rc1'
 gem 'spree_gateway', '~> 3.3.0.rc1'
 
 # # for importing products data using csv
-gem 'import_products', :git => 'git://github.com/rohitnick/spree-import-products.git'
-# gem 'spree_yoda_theme'
+gem 'import_products', git:'https://github.com/rohitnick/spree-import-products.git'
+# gem 'import_products', path: '~/projects/spree-import-products/'
+
+#for multiple templating options
+gem 'spree_yoda_theme', git: 'https://github.com/rohitnick/spree_yoda_theme.git'

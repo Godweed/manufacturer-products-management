@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605141981) do
+ActiveRecord::Schema.define(version: 20170728205024) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20170605141981) do
 
   create_table "spree_badges", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_calculators", force: :cascade do |t|
@@ -373,12 +373,13 @@ ActiveRecord::Schema.define(version: 20170605141981) do
     t.string "data_file_content_type"
     t.integer "data_file_file_size"
     t.datetime "data_file_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "product_ids"
     t.string "state"
     t.datetime "failed_at"
     t.datetime "completed_at"
+    t.string "error_text"
   end
 
   create_table "spree_product_option_types", force: :cascade do |t|

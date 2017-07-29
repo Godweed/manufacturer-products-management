@@ -53,7 +53,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
-  # config.active_job.queue_adapter     = :resque
+  config.active_job.queue_adapter     = :sidekiq
   # config.active_job.queue_name_prefix = "sankalp_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
@@ -83,4 +83,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    url: ':s3_domain_url',
+    s3_protocol: "http",
+    path: "/spree/product_imports/data-files/:basename_:timestamp.:extension",
+    s3_credentials: {
+      bucket: 'sankalpint',
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: 'ap-south-1',
+    }
+  }
 end
