@@ -57,7 +57,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "sankalp_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-    # UNCOMMENT BELOW LINES TO SEND EMAILS
+  # UNCOMMENT BELOW LINES TO SEND EMAILS
   config.action_mailer.delivery_method = :smtp
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -88,15 +88,16 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.paperclip_defaults = {
-    storage: :s3,
-    url: ':s3_domain_url',
-    s3_protocol: "http",
-    path: "/spree/product_imports/data-files/:basename_:timestamp.:extension",
     s3_credentials: {
-      bucket: 'sankalpint',
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      bucket: ENV['S3_BUCKET_NAME'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       s3_region: 'ap-south-1',
     }
+    storage: :s3,
+    s3_headers: { "Cache-Control" => "max-age=31557600" },
+    s3_protocol: "http",
+    bucket: ENV['S3_BUCKET_NAME'],
+    url:  ":s3_domain_url",
   }
 end

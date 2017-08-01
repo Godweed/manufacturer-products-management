@@ -29,8 +29,13 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   config.active_job.queue_adapter  = :sidekiq
 
+  # UNCOMMENT BELOW LINES TO SEND EMAILS
+  config.action_mailer.delivery_method = :smtp
+
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.perform_caching = false
 
