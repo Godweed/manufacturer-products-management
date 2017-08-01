@@ -7,5 +7,5 @@ end
 
 if ENV['RAILS_ENV'] == 'production'
   Spree::Image.attachment_definitions[:attachment][:path] = "/:class/:style/:sku/:slug-:basename.:extension"
-  Spree::ProductImport.attachment_definitions[:attachment][:path] = "/spree/product_imports/:basename_:timestamp.:extension"
+  Spree::ProductImport.data_file_definitions[:data_file][:path] = "/spree/product_imports/:basename_:timestamp.:extension"
 end
